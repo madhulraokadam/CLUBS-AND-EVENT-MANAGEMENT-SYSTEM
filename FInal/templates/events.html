@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | CMRU Clubs and Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+</head>
+
+<body>
+
+    <!-- ===== Header Section ===== -->
+    <header>
+        <h2 class="logo">CMRU Clubs and Events</h2>
+        <nav class="navigation">
+            <button class="btnNav" onclick="location.href='{{ url_for('home')}}'">Home</button>
+            <button class="btnNav" onclick="location.href='{{ url_for('clubs')}}'">Clubs</button>
+            <button class="btnNav active" onclick="location.href='{{ url_for('events')}}'">Events</button>
+            <button class="btnNav" onclick="location.href='{{ url_for('notifications')}}'">Notification</button>
+            <button class="btnNav" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <!-- ===== Main Section ===== -->
+    <section class="events-section">
+        <h1>EVENTS</h1>
+        <div class="cards-container">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Hackathon 2025</h3>
+                <p>Join us for an exciting 24-hour coding marathon! Develop innovative solutions with fellow tech enthusiasts.</p>
+                <button class="btnEnroll" onclick="showEventDetails('Hackathon 2025', 'hackathon.jpg', '50')">Enroll</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Marathon 2025
+</h3>
+                <p>Get ready for an adrenaline rush! Participate in multiple sports events and showcase your athletic skills.</p>
+                <button class="btnEnroll" onclick="showEventDetails('Marathon 2025', 'sports.jpg', '75')">Enroll</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Cultural Fest</h3>
+                <p>Experience a vibrant celebration of diverse cultures through music, dance, and art!</p>
+                <button class="btnEnroll" onclick="showEventDetails('Cultural Fest', 'Cultural.png', '120')">Enroll</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Event Details Section (Hidden by Default) ===== -->
+    <section class="event-details" id="eventDetails" style="display: none;">
+        <h2 id="eventTitle"></h2>
+        <img id="eventImage" src="" alt="Event Image">
+        <p id="eventDescription"></p>
+        <p><strong>People Enrolled:</strong> <span id="enrolledCount"></span></p>
+
+
+        <!-- ===== Enroll Form (Hidden by Default) ===== -->
+        <form id="enrollForm" onsubmit="submitForm(event)">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+            <select id="department" required>
+            <option value="" disabled selected>Select Department</option>
+            <option value="CSE">Computer Science & Engineering</option>
+            <option value="AIML">AI & Machine Learning</option>
+            <option value="DS">Data Science</option>
+            <option value="IT">Information Technology</option>
+            <option value="ECE">Electronics & Communication</option>
+            </select>
+            <select id="semester" required>
+            <option value="" disabled selected>Select Semester</option>
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+            <option value="3">3rd Semester</option>
+            <option value="4">4th Semester</option>
+            <option value="5">5th Semester</option>
+            <option value="6">6th Semester</option>
+            <option value="7">7th Semester</option>
+            <option value="8">8th Semester</option>
+            </select>  
+            <button type="submit">Enroll Now</button>
+        </form>
+        
+        <!-- Success Message (Hidden) -->
+        <p id="successMessage" class="success-message" style="display: none; color: green; margin-top: 20px;">
+            🎉 Enrollment Successful!
+        </p>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/events.js') }}"></script>
+</body>
+
+</html>
+

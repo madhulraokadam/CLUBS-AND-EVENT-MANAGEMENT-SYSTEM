@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== BODY STYLING ===== */
+body {
+    background-color: transparent;
+    padding-top: 95px;
+    background-image: url("../images/events-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.btnNav {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #fffafa;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnNav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* ===== DROPDOWN / POPUP FORM ===== */
+.dropdown-popup {
+    position: fixed;
+    top: 80px;
+    left: -350px; /* Initially hidden */
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.dropdown-popup.show {
+    left: 10px; /* Slide-in effect */
+}
+
+.dropdown-popup h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.dropdown-popup input,
+.dropdown-popup select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #162938;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown-popup button:hover {
+    background-color: #0f1c26;
+}
+
+/* ===== CLUBS SECTION ===== */
+.clubs-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.clubs-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ===== CARDS CONTAINER ===== */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== INDIVIDUAL CARD ===== */
+.card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #080808;
+}
+
+.btnAbout {
+    padding: 10px 20px;
+    background-color: #162938; /* Black button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnAbout:hover {
+    background-color: #0f1c26;
+}
+
+/* ===== CLUB DETAILS SECTION ===== */
+.club-details {
+    padding: 40px 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.club-details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.club-details img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.club-details p {
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+/* ===== Events Container ===== */
+#club-events {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding around the events */
+    transition: transform 0.3s; /* Animation effect */
+}
+
+#club-events:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+#club-events li {
+    margin-bottom: 15px; /* Increased space between events */
+    padding: 10px; /* Padding for each event */
+    border-radius: 8px; /* Rounded corners for each event */
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for each event */
+    transition: background-color 0.3s; /* Animation effect */
+    color: white; /* Set text color to white */
+}
+
+#club-events li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+}
+
+/* ===== Enlarged Event Images ===== */
+#club-events img {
+    width: 180px; /* Increased size */
+    height: 140px; /* Increased size */
+    margin-top: 5px; /* Space between text and image */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* ===== CLOSE BUTTON ===== */
+.btn-close {
+    padding: 10px 20px;
+    background-color: #090909;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-close:hover {
+    background-color: #0f1c26;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | CMRU Clubs and Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h2 class="logo">CMRU Clubs and Events</h2>
+        <nav class="navigation">
+            <button class="btnNav" onclick="window.location.href='{{ url_for('home')}}'">Home</button>
+            <button class="btnNav" onclick="window.location.href='{{ url_for('clubs')}}'">Clubs</button>
+            <button class="btnNav" onclick="window.location.href='{{ url_for('events')}}'">Events</button>
+            <button class="btnNav active" onclick="window.location.href='{{ url_for('notifications')}}'">Notification</button>
+            <button class="btnNav" onclick="location.href='{{ url_for('profile')}}'">Profile</button>
+            <button class="btnNav" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>Student Details</h2>
+            <h3 id="username"></h3>
+            <table class="profile-table">
+                <tr>
+                    <th>Name:</th>
+                    <td><input type="text" id="name" /></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><input type="email" id="email" /></td>
+                </tr>
+                <tr>
+                    <th>Phone No:</th>
+                    <td><input type="tel" id="phoneNo" /></td>
+                </tr>
+                <tr>
+                    <th>Course:</th>
+                    <td>
+                        <select id="course">
+                            <option value="AIML">AIML</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="DS">DS</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="CIVIL">CIVIL</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Semester:</th>
+                    <td>
+                        <select id="semester">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button class="btnEdit" onclick="saveProfile()">Save Profile</button>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+
+</html>
+<script>
+    function logout() {
+        // Implement your logout logic here
+        alert("You have logged out successfully.");
+        window.location.href = "{{ url_for('login') }}"
+    }
+

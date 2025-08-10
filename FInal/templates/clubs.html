@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs - CMRU Clubs and Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clubs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+</head>
+
+<body>
+
+    <!-- ===== Header Section ===== -->
+    <header>
+        <h2 class="logo">CMRU Clubs and Events</h2>
+        <nav class="navigation">
+            <button class="btnNav" onclick="location.href='{{ url_for('home')}}'">Home</button>
+            <button class="btnNav active" onclick="location.href='{{ url_for('clubs')}}'">Clubs</button>
+            <button class="btnNav" onclick="location.href='{{ url_for('events')}}'">Events</button>
+            <button class="btnNav" onclick="location.href='{{ url_for('notifications')}}'">Notification</button>
+            <button class="btnNav" onclick="logout()">Logout</button>
+            <div class="dropdown">
+                <button class="btnNav dropdown-toggle" onclick="toggleDropdown()">☰</button>
+                <div class="dropdown-popup" id="dropdownPopup">
+                    <h4>Register for a Club</h4>
+                    <form id="clubregistrationForm" method="POST" action="/club_register">
+                        <input type="text" id="studentName" name="studentName" placeholder= "Student Name" required>
+                        <input type="email" id="studentEmail" name="studentEmail" placeholder= "Student Email" required>
+                        <input type="phoneNo" id="studentPhonenumber" name="studentPhonenumber" placeholder= "Phone Number" required>
+                        <select id="studentClub" name="studentClub" required>
+                            <option value="" disabled selected>Select Club</option>
+                            <option value="DATA SCIENCE CLUB">Data Science Club</option>
+                            <option value="SPORTS CLUB">Sports Club</option>
+                            <option value="CULTURAL CLUB">Cultural Club</option>
+                            <option value="NCC CLUB">NCC</option>
+                            <option value="ROBOTICS CLUB">Robotics Club</option>
+                            <option value="FASHION CLUB">Fashion Club</option>
+                        </select>
+
+                        <select id="studentDepartment" name="studentDepartment" required>
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="CSE">Computer Science & Engineering</option>
+                            <option value="AIML">Computer Science & Engineering- Artificial Intelligence & Machine Learning</option>
+                            <option value="DS">Computer Science & Engineering - Data Science</option>
+                            <option value="IT">Computer Science & Engineering - Information Technology</option>
+                            <option value="ECE">Electronics & Communication Engineering</option>
+                        </select>
+
+                        <select id="studentSemester" name="studentSemester" required>
+                            <option value="" disabled selected>Select Semester</option>
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+
+                        <button type="submit">Register</button>
+                    </form>
+                    <p id="registrationMessage" style="color: green; display: none;"></p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Main Section ===== -->
+    <section class="clubs-section">
+        <h1>CLUBS</h1>
+        <div class="cards-container">
+
+            <!-- Card 1: DATA SCIENCE CLUB -->
+            <div class="card">
+                <h3>DATA SCIENCE CLUB</h3>
+                <p>Master data analytics and machine learning through real-world projects and competitions.</p>
+                <button class="btnAbout" onclick="showClubDetails('DATA SCIENCE CLUB')">About Us</button>
+            </div>
+
+            <!-- Card 2: SPORTS CLUB -->
+            <div class="card">
+                <h3>SPORTS CLUB</h3>
+                <p>Engage in various sports activities to develop teamwork, discipline, and resilience.</p>
+                <button class="btnAbout" onclick="showClubDetails('SPORTS CLUB')">About Us</button>
+            </div>
+
+            <!-- Card 3: CULTURAL CLUB -->
+            <div class="card">
+                <h3>CULTURAL CLUB</h3>
+                <p>Celebrate diverse cultures through music, dance, and art performances.</p>
+                <button class="btnAbout" onclick="showClubDetails('CULTURAL CLUB')">About Us</button>
+            </div>
+
+            <!-- Card 4: NCC CLUB -->
+            <div class="card">
+                <h3>NCC CLUB</h3>
+                <p>Develop leadership and patriotism through NCC training and drills.</p>
+                <button class="btnAbout" onclick="showClubDetails('NCC CLUB')">About Us</button>
+            </div>
+
+            <!-- Card 5: ROBOTICS CLUB -->
+            <div class="card">
+                <h3>ROBOTICS CLUB</h3>
+                <p>Innovate and build smart robotic solutions through hands-on projects.</p>
+                <button class="btnAbout" onclick="showClubDetails('ROBOTICS CLUB')">About Us</button>
+            </div>
+
+            <!-- Card 6: FASHION CLUB -->
+            <div class="card">
+                <h3>FASHION CLUB</h3>
+                <p>Explore creativity and style through fashion events and shows.</p>
+                <button class="btnAbout" onclick="showClubDetails('FASHION CLUB')">About Us</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Club Details Section ===== -->
+    <section class="club-details" id="clubDetails" style="display: none;">
+        <h2 id="club-name"></h2>
+        <img id="club-img" class="club-img" alt="Club Image" />
+        <p id="club-about" class="club-about"></p>
+
+        <div class="event-details">
+            <h3>Previous Events:</h3>
+            <ul id="club-events"></ul>
+        </div>
+
+        <div class="club-info">
+            <p><strong>Coordinator:</strong> <span id="club-coordinator"></span></p>
+            <p><strong>Secretary:</strong> <span id="club-secretary"></span></p>
+            <p><strong>Members Joined:</strong> <span id="club-members"></span></p>
+        </div>
+
+        <button class="btn-close" onclick="hideDetails()">Close</button>
+    </section>
+
+    <!-- ===== JavaScript Section ===== -->
+    <script src="{{ url_for('static', filename='js/clubs.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CMRU Clubs and Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+
+</head>
+
+<body>
+
+    <!-- ===== Header Section ===== -->
+    <header>
+        <h2 class="logo">CMRU Clubs and Events</h2>
+        <nav class="navigation">
+            <button class="btnNav active" onclick="window.location.href='{{ url_for('home')}}'">Home</button>
+            <button class="btnNav" onclick="window.location.href='{{ url_for('clubs')}}'">Clubs</button>
+            <button class="btnNav" onclick="window.location.href='{{ url_for('events')}}'">Events</button>
+            <button class="btnNav" onclick="window.location.href='{{ url_for('notifications')}}'">Notification</button>
+            <button class="btnNav" onclick="logout()">Logout</button>
+        </nav>
+        
+    </header>
+
+    <!-- ===== WELCOME BACK SECTION ===== -->
+    <section class="welcome-section">
+        <h1>WELCOME BACK!!</h1>
+    </section>
+
+    <!-- ===== ABOUT US SECTION ===== -->
+    <section class="about-section">
+        <div class="about-box">
+            <h2>ABOUT US</h2>
+            <p>
+                <p>🎉 <strong>CMRU Clubs and Events</strong> is an empowering platform where students can explore a wide range of clubs, participate in exciting events, and engage with their peers in meaningful ways. We aim to foster a vibrant campus culture where students can showcase their talents, cultivate their passions, and develop valuable skills that extend beyond the classroom. 🌟</p>
+
+                <p>Our platform brings together diverse student communities through a variety of <strong>cultural, technical, sports, and social activities</strong>. Whether you're interested in coding competitions, performing arts, entrepreneurship, community service, or fitness challenges — there's a place for you here. Our clubs are designed to encourage collaboration, creativity, and leadership, providing opportunities for students to step out of their comfort zones and explore new horizons. 🚀</p>
+                
+                <p>✨ <strong>Our Mission:</strong> We are committed to enhancing the overall student experience by creating an inclusive and dynamic environment where ideas are exchanged, friendships are built, and memories are made. Through workshops, hackathons, cultural fests, sports tournaments, and social impact initiatives, we empower students to grow personally and professionally, preparing them to become leaders of tomorrow. 🤝</p>
+                
+                <p>Join us today and be a part of this exciting journey of discovery, growth, and community spirit! 🎯</p>
+                
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SCROLLING SECTION ===== -->
+    <section class="scrolling-section">
+        <h2>Explore Our Clubs And Events</h2>
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            <p><strong>Events:</strong>
+                🎉 CMRU Clubs and Events hosts exciting workshops, cultural fests, and sports competitions that inspire creativity and teamwork. Join us to explore your passions and create unforgettable memories! 🚀
+            </p>
+        </marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="6">
+            <p><strong>Clubs:</strong> 🎉Join the exciting clubs and become part of an engaging community!🎉</p>
+        </marquee>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2025 CMRU Clubs and Events. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script> <!-- JS File Linked Here -->
+</body>
+
+</html>
+<script>
+    function logout() {
+        // Implement your logout logic here
+        alert("You have logged out successfully.");
+        window.location.href = "{{ url_for('login') }}"
+    }
+
+   

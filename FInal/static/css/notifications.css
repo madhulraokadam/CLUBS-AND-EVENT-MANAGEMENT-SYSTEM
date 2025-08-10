@@ -1,0 +1,118 @@
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ===== Navigation Styles ===== */
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+nav .btnNav {
+    background-color: #000;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+nav .btnNav:hover {
+    background-color: #ffa500;
+    color: #fff;
+    border: 2px solid #ffa500;
+}
+
+nav .btnNav.active {
+    background-color: #ffa500;
+    color: white;
+}
+
+/* ===== Notification Section ===== */
+.notification-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: url("../images/background.jpg") no-repeat center center/cover;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ===== Notification Container ===== */
+.notification-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.notification-box {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(8, 1, 1, 0.1);
+    text-align: left;
+}
+
+/* ===== Notification Item Styling ===== */
+.notification-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.notification-item:hover {
+    transform: translateY(-5px);
+    background-color: #ffa500;
+    color: #fff;
+}
+
+/* ===== Date Styling ===== */
+.notification-date {
+    font-size: 14px;
+    color: red; /* Light gray color for the date */
+    margin-left: 10px; /* Space between message and date */
+}
+
+/* ===== Footer Styles ===== */
+footer {
+    background-color: #0f0606;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

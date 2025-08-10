@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMRU Clubs and Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="logo">CMRU Clubs And Events</div>
+        <nav class="navigation">
+            <button class="btnNav" onclick="location.href={{ url_for('login') }}">Login</button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="content">
+        
+        <div class="center-box">
+            <h1>🎉 CMR University Clubs and Events 🎉</h1>
+            <p><p>🎉 Join CMR University Clubs and Events to explore your passions, meet amazing people, and be a part of exciting activities! Whether you're into arts, tech, sports, or leadership, there’s a place for you. Don’t miss out on the fun — get involved today! 🚀</p>
+            🌟</p>
+            
+            <a href={{ url_for('signup') }} class="btn">Get Started</a>
+
+        </div>
+
+        
+    </section>
+    
+    
+
+</body>
+
+

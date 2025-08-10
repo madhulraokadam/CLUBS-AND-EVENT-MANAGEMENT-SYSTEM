@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e1c13500;
+    color: #fff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 1.4em;
+    color: #fff;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.btnNav {
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnNav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Profile Section */
+.profile-section {
+    height: 100vh;
+    background: url("../images/profile-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 12px;
+    width: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Table */
+.profile-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.profile-table th, .profile-table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.profile-table th {
+    width: 40%;
+    color: #ddd;
+}
+
+.profile-table td {
+    color: #fff;
+}
+
+/* Input Styles */
+.profile-table input[type="text"],
+.profile-table input[type="email"],
+.profile-table input[type="tel"],
+.profile-table select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Edit Profile Button */
+.btnEdit {
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnEdit:hover {
+    background: rgba(5, 5, 5, 0.2);
+    transform: scale(1.05);
+}
